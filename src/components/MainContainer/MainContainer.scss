@@ -1,0 +1,7 @@
+@use "../../theme/varables/sizes_variables" as sizes_variables;
+.main-container {
+  width: 100%;
+  height: calc(
+    100vh - sizes_variables.$header-height - sizes_variables.$footer-height
+  );
+}

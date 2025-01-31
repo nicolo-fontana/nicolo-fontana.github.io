@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "../../theme/varables/sizes_variables" as sizes_variables;
+@use "../../theme/varables/colors_variables" as colors_variables;
+@use "../../theme/varables/font_size_variables" as font_size_variables;
+
+.footer {
+  width: 100%;
+  height: sizes_variables.$footer-height;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid map.get(colors_variables.$theme-colors, "line-color");
+
+  &__container {
+    display: flex;
+  }
+
+  &__tab {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: map.get(font_size_variables.$font-size, "label");
+    color: map.get(colors_variables.$theme-colors, "secondary-100");
+    padding: 0 14px;
+
+    a {
+      height: 20px;
+      text-decoration: none;
+      p {
+        color: map.get(colors_variables.$theme-colors, "secondary-100");
+      }
+    }
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &--left {
+      border-right: 1px solid
+        map.get(colors_variables.$theme-colors, "line-color");
+      &:first-child {
+        padding: 0 18px 0 22px;
+      }
+    }
+    &--right {
+      border-left: 1px solid
+        map.get(colors_variables.$theme-colors, "line-color");
+      a {
+        display: flex;
+        p {
+          margin: 0;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
