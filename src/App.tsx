@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header/Header";
-import Home from "./pages/Home/Home";
-import "./App.scss";
+import MainContainer from "./components/MainContainer/MainContainer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [openedTabs, setOpenedTabs] = useState<string[]>([
@@ -12,13 +12,14 @@ function App() {
   const [selectedTab, setSelectedTab] = useState<string>("_hello");
 
   return (
-    <div className="main-container bg-primary-200">
+    <div className="bg-primary-200">
       <Header
         openedTabs={openedTabs}
         selectedTab={selectedTab}
         onClick={(clickedTab) => setSelectedTab(clickedTab)}
       />
-      <Home />
+      <MainContainer></MainContainer>
+      <Footer />
     </div>
   );
 }
