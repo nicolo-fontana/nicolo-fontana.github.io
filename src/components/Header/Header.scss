@@ -1,50 +1,49 @@
 @use "sass:map";
 @use "../../theme/varables/colors_variables" as colors_variables;
-@use "../../theme/varables/font_size_variables" as font_size_variables;
 @use "../../theme/varables/sizes_variables" as sizes_variables;
 
+$header-height: sizes_variables.$header-height;
+$selected-tab-border-color: map.get(colors_variables.$colors, "accent-100");
+$selected-tab-text-color: map.get(colors_variables.$colors, "white");
+$border-color: map.get(colors_variables.$colors, "line-color");
+
 .header {
-  width: 100%;
-  height: sizes_variables.$header-height;
-  display: flex;
-  border-bottom: 1px solid map.get(colors_variables.$theme-colors, "line-color");
+  height: $header-height;
 
   &__tab {
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-size: map.get(font_size_variables.$font-size, "label");
-    border-right: 1px solid
-      map.get(colors_variables.$theme-colors, "line-color");
-    color: map.get(colors_variables.$theme-colors, "secondary-100");
-    padding: 0 31px 0 32px;
-
-    &__name {
-      width: 310px;
-      padding: 0;
-      p {
-        padding: 0 22px;
-      }
-    }
-
     &::after {
       content: "";
       position: absolute;
-      bottom: -1px;
-      left: -1px;
-      right: -1px;
-      height: 3px;
-      background: map.get(colors_variables.$theme-colors, "accent-100");
+      bottom: -0.1rem;
+      left: -0.1rem;
+      right: -0.1rem;
+      height: 0.3rem;
+      background: $selected-tab-border-color;
       opacity: 0;
       transition: opacity 0.3s;
     }
 
     &--selected {
-      color: map.get(colors_variables.$theme-colors, "white");
+      color: $selected-tab-text-color;
       &::after {
         opacity: 1;
       }
+    }
+  }
+
+  &__name {
+    width: 31.1rem;
+  }
+
+  &__border {
+    &--bottom {
+      border-bottom: 0.1rem solid $border-color;
+    }
+    &--right {
+      border-right: 0.1rem solid $border-color;
+    }
+    &--left {
+      border-left: 0.1rem solid $border-color;
     }
   }
 }

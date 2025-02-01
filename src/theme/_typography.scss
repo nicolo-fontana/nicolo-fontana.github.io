@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "./varables/typography_variables" as typography_variables;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@each $name, $typography in typography_variables.$typography {
+  .theme-text-#{$name} {
+    font-family: map.get($typography, "font-family"), serif;
+    font-weight: map.get($typography, "font-weight");
+    font-size: map.get($typography, "font-size");
+    font-style: normal;
+    font-optical-sizing: auto;
+  }
+}

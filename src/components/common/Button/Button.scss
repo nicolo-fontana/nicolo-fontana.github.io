@@ -1,6 +1,6 @@
 @use "sass:map";
-@use "../../theme/varables/colors_variables" as colors_varibales;
-@use "../../theme/varables/font_size_variables" as font_size_variables;
+@use "../../../theme/varables/colors_variables" as colors_varibales;
+@use "../../../theme/varables/typography_variables" as typography_variables;
 
 .button {
   border: none;
@@ -8,19 +8,19 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: map.get(font_size_variables.$font-size, "snippet");
+  font-size: map.get(map.get(typography_variables.$typhography, "snippet"), "font-size");
   border-radius: 0.5em;
 
   &.primary {
     background-color: map.get(
-      colors_varibales.$buttons-colors,
+      colors_varibales.$colors,
       "button-primary-background"
     );
-    color: map.get(colors_varibales.$buttons-colors, "button-primary-text");
+    color: map.get(colors_varibales.$colors, "button-primary-text");
 
     &:hover {
       background-color: map.get(
-        colors_varibales.$buttons-colors,
+        colors_varibales.$colors,
         "button-primary-hover-background"
       );
     }
@@ -28,14 +28,14 @@
 
   &.default {
     background-color: map.get(
-      colors_varibales.$buttons-colors,
+      colors_varibales.$colors,
       "button-default-background"
     );
-    color: map.get(colors_varibales.$buttons-colors, "button-default-text");
+    color: map.get(colors_varibales.$colors, "button-default-text");
 
     &:hover {
       background-color: map.get(
-        colors_varibales.$buttons-colors,
+        colors_varibales.$colors,
         "button-default-hover-background"
       );
     }
@@ -43,14 +43,14 @@
 
   &.ghost {
     background-color: transparent;
-    color: map.get(colors_varibales.$buttons-colors, "button-ghost-text");
+    color: map.get(colors_varibales.$colors, "button-ghost-text");
     border: 1px solid
-      map.get(colors_varibales.$buttons-colors, "button-ghost-text");
+      map.get(colors_varibales.$colors, "button-ghost-text");
 
     &:hover {
-      color: map.get(colors_varibales.$buttons-colors, "button-ghost-text");
+      color: map.get(colors_varibales.$colors, "button-ghost-text");
       border-color: map.get(
-        colors_varibales.$buttons-colors,
+        colors_varibales.$colors,
         "button-ghost-hover-text"
       );
     }
