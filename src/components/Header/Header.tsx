@@ -3,17 +3,15 @@ import HamburgerMenuIcon from "../../assets/hamburger_menu.svg";
 import HamburgerMenuCloseIcon from "../../assets/hamburger_menu_close.svg";
 import { useState } from "react";
 import Footer from "../Footer/Footer";
+import { TabMenu } from "../../models/TabMenuModel";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface HeaderProps {
-  openedTabs: string[];
-  selectedTab: string;
-  onClick: (clickedTab: string) => void;
+  tabs: TabMenu[];
 }
-const Header: React.FC<HeaderProps> = ({
-  openedTabs,
-  selectedTab,
-  onClick,
-}) => {
+const Header: React.FC<HeaderProps> = ({ tabs }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [mobileMenuIsOpened, setMobileMenuIsOpened] = useState<boolean>(false);
 
   return (
@@ -23,15 +21,17 @@ const Header: React.FC<HeaderProps> = ({
         <label className="header__name ps-4 d-flex align-items-center theme-text-body-small clr-secondary-100 header__border--right cursor-default">
           nicolò-fontana
         </label>
-        {openedTabs.map((tabName, index) => (
+        {tabs.map((tab, index) => (
           <a
             key={index}
             className={`px-5 h-100 header__tab header__border--right text-decoration-none theme-text-body-small clr-secondary-100 d-flex align-items-center text-center position-relative cursor-default ${
-              selectedTab === tabName ? "header__tab--selected" : ""
+              location.pathname.includes(tab.path)
+                ? "header__tab--selected"
+                : ""
             }`}
-            onClick={() => onClick(tabName)}
+            onClick={() => navigate(tab.path)}
           >
-            {tabName}
+            {tab.name}
           </a>
         ))}
       </div>
@@ -58,15 +58,17 @@ const Header: React.FC<HeaderProps> = ({
         }`}
       >
         <ul className="p-0">
-          {openedTabs.map((tabName, index) => (
+          {tabs.map((tab, index) => (
             <li
               key={index}
               className={`p-4 w-100 header__tab text-decoration-none theme-text-body-small clr-secondary-100 position-relative cursor-default ${
-                selectedTab === tabName ? "header__tab--selected" : ""
+                location.pathname.includes(tab.path)
+                  ? "header__tab--selected"
+                  : ""
               }`}
-              onClick={() => onClick(tabName)}
+              onClick={() => navigate(tab.path)}
             >
-              {tabName}
+              {tab.name}
             </li>
           ))}
         </ul>
