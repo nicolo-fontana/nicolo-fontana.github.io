@@ -10,6 +10,7 @@ import {
   Routes,
 } from "react-router-dom";
 import { TABS_MENU } from "./constants/TabsMenuConstant";
+import AboutMePage from "./pages/AboutMePage/AboutMePage";
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/hello" />} />
             <Route path="/hello" element={<HelloPage />} />
-            <Route path="/about-me" element={<HelloPage />} />
-            <Route path="/projects" element={<HelloPage />} />
+            <Route path="/about-me" element={<AboutMePage />} />
+            <Route path="/projects" element={<AboutMePage />} />
           </Routes>
         </MainContainer>
         <div className="d-none d-xl-block">
