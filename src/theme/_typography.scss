@@ -1,14 +1,19 @@
 @use "sass:map";
 @use "./varables/typography_variables" as typography_variables;
+@use "/node_modules/bootstrap/scss/bootstrap" as bootstrap;
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 
 @each $name, $typography in typography_variables.$typography {
   .theme-text-#{$name} {
     font-family: map.get($typography, "font-family"), serif;
     font-weight: map.get($typography, "font-weight");
-    font-size: map.get($typography, "font-size");
+    font-size: map.get($typography, "font-size-sm");
     font-style: normal;
     font-optical-sizing: auto;
+
+    @include bootstrap.media-breakpoint-up(sm) {
+      font-size: map.get($typography, "font-size");
+    }
   }
 }

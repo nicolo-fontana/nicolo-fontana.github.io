@@ -18,11 +18,18 @@ const Footer: React.FC<FooterInterface> = () => {
         >
           <img src={LinkedinIcon} alt="" className="footer__logo" />
         </a>
+        <a
+          href="https://github.com/nicolo-fontana"
+          target="_black"
+          className="d-flex d-xl-none align-items-center text-decoration-none footer__border--right h-100 px-4 cursor-default"
+        >
+          <img src={GithubIcon} alt="" className="footer__logo" />
+        </a>
       </div>
       <a
         href="https://github.com/nicolo-fontana"
         target="_black"
-        className="d-flex align-items-center text-decoration-none footer__border--left h-100 px-4 cursor-default"
+        className="d-none d-xl-flex align-items-center text-decoration-none footer__border--left h-100 px-4 cursor-default"
       >
         <label className="theme-text-body-small clr-secondary-100 pe-2">
           @nicolo-fontana

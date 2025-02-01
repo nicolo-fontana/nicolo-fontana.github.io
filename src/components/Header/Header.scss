@@ -46,4 +46,16 @@ $border-color: map.get(colors_variables.$colors, "line-color");
       border-left: 0.1rem solid $border-color;
     }
   }
+
+  &__mobile-menu {
+    height: 0;
+    top: $header-height;
+    z-index: 888;
+    overflow-y: hidden;
+    transition: height 0.3s;
+
+    &--show{
+      height: calc(100vh - $header-height);
+    }
+  }
 }
