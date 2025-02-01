@@ -6,28 +6,29 @@ interface FooterInterface {}
 
 const Footer: React.FC<FooterInterface> = () => {
   return (
-    <footer className="footer">
-      <div className="footer__container">
-        <div className="footer__tab footer__tab--left">
-          <p>find me in: </p>
-        </div>
-        <div className="footer__tab footer__tab--left">
-          <a
-            href="https://www.linkedin.com/in/nicolo-nf-fontana/"
-            target="_black"
-          >
-            <img src={LinkedinIcon} alt="" />
-          </a>
-        </div>
+    <footer className="footer footer__border--top w-100 d-flex justify-content-between">
+      <div className="d-flex">
+        <label className="text-body-small clr-secondary-100 d-flex align-items-center footer__border--right px-4 cursor-default">
+          find me in:
+        </label>
+        <a
+          href="https://www.linkedin.com/in/nicolo-nf-fontana/"
+          target="_black"
+          className="d-flex align-items-center text-decoration-none footer__border--right h-100 px-4 cursor-default"
+        >
+          <img src={LinkedinIcon} alt="" className="footer__logo" />
+        </a>
       </div>
-      <div className="footer__container">
-        <div className="footer__tab footer__tab--right">
-          <a href="https://github.com/nicolo-fontana" target="_black">
-            <p>@nicolo-fontana</p>
-            <img src={GithubIcon} alt="" />
-          </a>
-        </div>
-      </div>
+      <a
+        href="https://github.com/nicolo-fontana"
+        target="_black"
+        className="d-flex align-items-center text-decoration-none footer__border--left h-100 px-4 cursor-default"
+      >
+        <label className="text-body-small clr-secondary-100 pe-2">
+          @nicolo-fontana
+        </label>
+        <img src={GithubIcon} alt="" className="footer__logo" />
+      </a>
     </footer>
   );
 };

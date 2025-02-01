@@ -11,19 +11,20 @@ const Header: React.FC<HeaderProps> = ({
   onClick,
 }) => {
   return (
-    <header className="header">
-      <div className="header__tab header__tab__name">
-        <p>nicolò-fontana</p>
-      </div>
+    <header className="header d-flex header__border--bottom">
+      <label className="header__name ps-4 d-flex align-items-center text-body-small clr-secondary-100 header__border--right cursor-default">
+        nicolò-fontana
+      </label>
       {openedTabs.map((tabName) => (
-        <div
-          className={`header__tab ${
+        <a
+          href="javascipt:void(0)"
+          className={`px-5 h-100 header__tab header__border--right text-decoration-none text-body-small clr-secondary-100 d-flex align-items-center text-center position-relative cursor-default ${
             selectedTab === tabName ? "header__tab--selected" : ""
           }`}
           onClick={() => onClick(tabName)}
         >
-          <p>{tabName}</p>
-        </div>
+          {tabName}
+        </a>
       ))}
     </header>
   );

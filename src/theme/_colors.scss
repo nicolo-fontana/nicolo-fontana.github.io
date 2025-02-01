@@ -1,22 +1,16 @@
 @use "./varables/colors_variables" as colors_variables;
 
-:root {
-  @each $name, $color in colors_variables.$theme-colors {
-    --theme-color-#{$name}: #{$color};
-  }
-}
-
-@each $name, $color in colors_variables.$theme-colors {
+@each $name, $color in colors_variables.$colors {
   .clr-#{$name} {
-    color: var(--theme-color-#{$name});
+    color: $color;
   }
   .bg-#{$name} {
-    background-color: var(--theme-color-#{$name});
+    background-color: $color;
     &:hover {
-      background-color: var(--theme-color-#{$name});
+      background-color: $color;
     }
   }
   .border-clr-#{$name} {
-    border-color: var(--theme-color-#{$name});
+    border-color: $color;
   }
 }

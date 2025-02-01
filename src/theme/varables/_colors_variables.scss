@@ -1,10 +1,11 @@
-$theme-colors: (
+$colors: (
   "primary-100": #01080e,
   "primary-200": #011627,
   "primary-300": #011221,
   "secondary-100": #607b96,
   "secondary-200": #3c9d93,
   "secondary-300": #4d5bce,
+  "secondary-400": #e5e9f0,
   "accent-100": #fea55f,
   "accent-200": #4309ad,
   "accent-300": #e99287,
@@ -13,9 +14,6 @@ $theme-colors: (
   "gradient-start": #4d5bce,
   "gradient-end": #43d9ad,
   "white": #ffffff,
-);
-
-$buttons-colors: (
   "button-primary-background": #fea55f,
   "button-primary-text": #01080e,
   "button-primary-hover-background": #ffac6b,

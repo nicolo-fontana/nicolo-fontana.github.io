@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Footer from "./components/Footer/Footer";
+import HelloPage from "./pages/HelloPage/HelloPage";
 
 function App() {
   const [openedTabs, setOpenedTabs] = useState<string[]>([
@@ -18,7 +19,9 @@ function App() {
         selectedTab={selectedTab}
         onClick={(clickedTab) => setSelectedTab(clickedTab)}
       />
-      <MainContainer></MainContainer>
+      <MainContainer>
+        <HelloPage />
+      </MainContainer>
       <Footer />
     </div>
   );
