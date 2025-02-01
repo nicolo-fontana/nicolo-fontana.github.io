@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "./components/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Footer from "./components/Footer/Footer";
@@ -6,7 +5,7 @@ import HelloPage from "./pages/HelloPage/HelloPage";
 import {
   Navigate,
   Route,
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
 } from "react-router-dom";
 import { TABS_MENU } from "./constants/TabsMenuConstant";
