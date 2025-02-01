@@ -22,7 +22,9 @@ function App() {
       <MainContainer>
         <HelloPage />
       </MainContainer>
-      <Footer />
+      <div className="d-none d-xl-block">
+        <Footer />
+      </div>
     </div>
   );
 }

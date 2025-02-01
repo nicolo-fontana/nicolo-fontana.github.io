@@ -1,7 +1,13 @@
 @use "../../theme/varables/sizes_variables" as sizes_variables;
+@use "/node_modules/bootstrap/scss/bootstrap" as bootstrap;
+
 .main-container {
   width: 100%;
-  min-height: calc(
-    100vh - sizes_variables.$header-height - sizes_variables.$footer-height
-  );
+  min-height: calc(100vh - sizes_variables.$header-height);
+
+  @include bootstrap.media-breakpoint-up(xl) {
+    min-height: calc(
+      100vh - sizes_variables.$header-height - sizes_variables.$footer-height
+    );
+  }
 }
