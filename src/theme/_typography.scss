@@ -1,20 +1,14 @@
 @use "sass:map";
 @use "./varables/typography_variables" as typography_variables;
 
-@font-face {
-  font-family: "Fira Code";
-  src: url("./fonts/Fira_Code/FiraCode-VariableFont_wght.ttf")
-    format("truetype");
-  font-weight: 1 900;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 @each $name, $typography in typography_variables.$typography {
-  .text-#{$name} {
-    font-family: map.get($typography, "font-family");
+  .theme-text-#{$name} {
+    font-family: map.get($typography, "font-family"), serif;
     font-weight: map.get($typography, "font-weight");
     font-size: map.get($typography, "font-size");
-    letter-spacing: 0.1rem;
+    font-style: normal;
+    font-optical-sizing: auto;
   }
 }

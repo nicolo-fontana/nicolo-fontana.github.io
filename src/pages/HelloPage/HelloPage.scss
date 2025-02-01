@@ -1,18 +1,5 @@
 .hello-page {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__container {
-    width: 50%;
-  }
-
-  &__background-blurs {
-    width: 779px;
-    height: 742px;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
+  &__bg-blurs {
+    width: 77.9rem;
   }
 }

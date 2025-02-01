@@ -8,7 +8,7 @@ const Footer: React.FC<FooterInterface> = () => {
   return (
     <footer className="footer footer__border--top w-100 d-flex justify-content-between">
       <div className="d-flex">
-        <label className="text-body-small clr-secondary-100 d-flex align-items-center footer__border--right px-4 cursor-default">
+        <label className="theme-text-body-small clr-secondary-100 d-flex align-items-center footer__border--right px-4 cursor-default">
           find me in:
         </label>
         <a
@@ -24,7 +24,7 @@ const Footer: React.FC<FooterInterface> = () => {
         target="_black"
         className="d-flex align-items-center text-decoration-none footer__border--left h-100 px-4 cursor-default"
       >
-        <label className="text-body-small clr-secondary-100 pe-2">
+        <label className="theme-text-body-small clr-secondary-100 pe-2">
           @nicolo-fontana
         </label>
         <img src={GithubIcon} alt="" className="footer__logo" />
