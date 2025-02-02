@@ -1,4 +1,6 @@
+@use "sass:map";
 @use "../../theme/varables/sizes_variables" as sizes_variables;
+@use "../../theme/varables/colors_variables" as colors_variables;
 @use "/node_modules/bootstrap/scss/bootstrap" as bootstrap;
 
 .hello-page {
@@ -6,6 +8,7 @@
   min-height: calc(
     100vh - sizes_variables.$header-height - sizes_variables.$footer-height
   );
+  padding-top: 18rem;
 
   &__bg-blurs {
     width: 100%;
@@ -26,25 +29,17 @@
   }
 }
 
-.typewriter {
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 1s steps(80, end) forwards;
-  animation-delay: 1s;
-  &-delay-1 {
-    animation-delay: 1.7s;
+
+@keyframes cursor-blink-animation {
+  0%,
+  100% {
+    border-right: 0.2rem solid map.get(colors_variables.$colors, "white");
   }
-  &-delay-2 {
-    animation-delay: 2.9s;
+  50% {
+    border-right: none;
   }
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.cursor-blink {
+  animation: cursor-blink-animation 1s infinite;
 }
