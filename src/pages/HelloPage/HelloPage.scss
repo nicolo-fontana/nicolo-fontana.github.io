@@ -8,7 +8,11 @@
   min-height: calc(
     100vh - sizes_variables.$header-height - sizes_variables.$footer-height
   );
-  padding-top: 18rem;
+  
+  padding-top: 7rem;
+  @include bootstrap.media-breakpoint-up(sm) {
+    padding-top: 18rem;
+  }
 
   &__bg-blurs {
     width: 100%;
