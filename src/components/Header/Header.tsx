@@ -66,7 +66,10 @@ const Header: React.FC<HeaderProps> = ({ tabs }) => {
                   ? "header__tab--selected"
                   : ""
               }`}
-              onClick={() => navigate(tab.path)}
+              onClick={() => {
+                setMobileMenuIsOpened(false);
+                navigate(tab.path);
+              }}
             >
               {tab.name}
             </li>
