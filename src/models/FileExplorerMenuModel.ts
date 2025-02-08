@@ -1,27 +1,26 @@
-export type FileExplorerFolder = {
+export type FileExplorerSectionType = {
   name: string;
-  files: FileExplorerFile[];
-  folders: FileExplorerFolder[];
-  links: FileExplorerLink[];
+  folders?: FileExplorerFolderType[];
+  links?: FileExplorerLinkType[];
 };
 
-export type FileExplorerFile = {
+export type FileExplorerFolderType = {
+  name: string;
+  color: string;
+  files: FileExplorerFileType[];
+};
+
+export type FileExplorerFileType = {
   id: FileExplorerFileId;
-  icon: FileExplorerIcon;
+  icon: string;
   name: string;
 };
 
-export type FileExplorerLink = {
-  icon: FileExplorerIcon;
+export type FileExplorerLinkType = {
+  icon: string;
   name: string;
   url: string;
 };
-
-export enum FileExplorerIcon {
-  MAIL,
-  PHONE,
-  MARKDOWN,
-}
 
 export enum FileExplorerFileId {
   PERSONAL_INFO,

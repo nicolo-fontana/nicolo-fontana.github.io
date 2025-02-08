@@ -1,4 +1,6 @@
-export const TABS_MENU = [
+import { TabMenu } from "../models/TabMenuModel";
+
+export const TABS_MENU: TabMenu[] = [
   {
     name: "_hello",
     path: "/hello",

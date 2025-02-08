@@ -1,7 +1,4 @@
 import "./Sidebar.scss";
-import TerminalIcon from "../../assets/professional-info-icon.svg";
-import FilesIcon from "../../assets/personal-info-icon.svg";
-import GamesIcon from "../../assets/hobbies-icon.svg";
 
 interface SidebarInterface {}
 
@@ -9,13 +6,13 @@ const Sidebar: React.FC<SidebarInterface> = () => {
   return (
     <div className="sidebar d-flex flex-column">
       <a className="sidebar__icon__link">
-        <img className="sidebar__icon" src={TerminalIcon} alt="" />
+        <i className="ri-terminal-box-fill sidebar__icon"></i>
       </a>
       <a className="sidebar__icon__link">
-        <img className="sidebar__icon" src={FilesIcon} alt="" />
+        <i className="ri-user-4-fill sidebar__icon sidebar__icon--selected"></i>
       </a>
       <a className="sidebar__icon__link">
-        <img className="sidebar__icon" src={GamesIcon} alt="" />
+        <i className="ri-gamepad-fill sidebar__icon"></i>
       </a>
     </div>
   );

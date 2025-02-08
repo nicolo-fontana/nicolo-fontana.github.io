@@ -54,8 +54,15 @@ $border-color: map.get(colors_variables.$colors, "line-color");
     overflow-y: hidden;
     transition: height 0.3s;
 
-    &--show{
+    &--show {
       height: calc(100vh - $header-height);
+    }
+
+    &__hamburger {
+      font-size: 2.5rem;
+      height: 2.3rem;
+      overflow: hidden;
+      color: map.get(colors_variables.$colors, "secondary-100");
     }
   }
 }

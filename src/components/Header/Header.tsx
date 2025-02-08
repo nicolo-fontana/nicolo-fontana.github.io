@@ -1,6 +1,4 @@
 import "./Header.scss";
-import HamburgerMenuIcon from "../../assets/hamburger_menu.svg";
-import HamburgerMenuCloseIcon from "../../assets/hamburger_menu_close.svg";
 import { useState } from "react";
 import Footer from "../Footer/Footer";
 import { TabMenu } from "../../models/TabMenuModel";
@@ -45,11 +43,11 @@ const Header: React.FC<HeaderProps> = ({ tabs }) => {
           className="h-100 d-flex align-items-center px-4"
           onClick={() => setMobileMenuIsOpened(!mobileMenuIsOpened)}
         >
-          {mobileMenuIsOpened ? (
-            <img src={HamburgerMenuCloseIcon} alt="hamburger menu" />
-          ) : (
-            <img src={HamburgerMenuIcon} alt="hamburger menu" />
-          )}
+          <i
+            className={`${
+              mobileMenuIsOpened ? "ri-close-large-fill" : "ri-menu-fill"
+            } header__mobile-menu__hamburger`}
+          ></i>
         </a>
       </div>
       <div

@@ -5,4 +5,51 @@
 .file-explorer {
   @include sizes_variables.set-page-dimensions(24.3rem);
   border-right: 0.1rem solid map.get(colors_variables.$colors, "line-color");
+
+  &__section {
+    &__header {
+      border-top: 0.1rem solid map.get(colors_variables.$colors, "line-color");
+      border-bottom: 0.1rem solid
+        map.get(colors_variables.$colors, "line-color");
+
+      padding: 1rem 0 0.9rem 1.4rem;
+
+      &__icon {
+        font-size: 2rem;
+        overflow: hidden;
+        height: 1.8rem;
+        transition: transform 0.1s;
+
+        &--opened {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &__body {
+      height: 0;
+      overflow: hidden;
+
+      &--opened {
+        height: auto;
+      }
+    }
+  }
+
+  &__folder {
+    &__header {
+      padding: 0.4rem 0 0.4rem 1.4rem;
+    }
+    &__body {
+      height: 0;
+      overflow: hidden;
+      &--opened {
+        height: auto;
+      }
+
+      &__file {
+        padding: 0.4rem 0 0.4rem 3.5rem;
+      }
+    }
+  }
 }
