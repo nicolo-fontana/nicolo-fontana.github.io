@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "../../theme/varables/sizes_variables" as sizes_variables;
+@use "../../theme/varables/colors_variables" as colors_variables;
+
+.file-explorer {
+  @include sizes_variables.set-page-dimensions(24.3rem);
+  border-right: 0.1rem solid map.get(colors_variables.$colors, "line-color");
+}

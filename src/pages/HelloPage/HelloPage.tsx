@@ -250,7 +250,7 @@ const HelloPage: React.FC<HelloPageInterface> = () => {
         src={BackgroundBlurs}
         alt=""
       />
-      <div className="w-auto mw-100 px-5 pt-5 pt-sm-0">
+      <div className="w-auto mw-100 p-5 py-sm-0">
         <div className="pb-5 fade-in">
           <div className="clr-secondary-400 theme-text-body m-0">
             Hi all. I am

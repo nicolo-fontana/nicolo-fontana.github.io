@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "../../theme/varables/sizes_variables" as sizes_variables;
+
+.about-me {
+  @include sizes_variables.set-page-dimensions();
+}

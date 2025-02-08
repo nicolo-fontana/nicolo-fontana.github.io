@@ -1,2 +1,12 @@
+@use "/node_modules/bootstrap/scss/bootstrap" as bootstrap;
+
 $header-height: 56px;
 $footer-height: 49px;
+
+@mixin set-page-dimensions($width: 100%) {
+  width: $width;
+  min-height: calc(100vh - $header-height);
+  @include bootstrap.media-breakpoint-up(xl) {
+    min-height: calc(100vh - $header-height - $footer-height);
+  }
+}

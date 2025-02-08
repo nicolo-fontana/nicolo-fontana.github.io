@@ -4,14 +4,13 @@
 @use "/node_modules/bootstrap/scss/bootstrap" as bootstrap;
 
 .hello-page {
-  width: 100%;
-  min-height: calc(
-    100vh - sizes_variables.$header-height - sizes_variables.$footer-height
-  );
-  
+  @include sizes_variables.set-page-dimensions();
+
   padding-top: 7rem;
+  padding-bottom: 7rem;
   @include bootstrap.media-breakpoint-up(sm) {
     padding-top: 18rem;
+    padding-bottom: 7rem;
   }
 
   &__bg-blurs {
@@ -32,7 +31,6 @@
     opacity: 0.35;
   }
 }
-
 
 @keyframes cursor-blink-animation {
   0%,
