@@ -12,7 +12,8 @@
       border-bottom: 0.1rem solid
         map.get(colors_variables.$colors, "line-color");
 
-      padding: 1rem 0 0.9rem 1.4rem;
+      padding-left: 1.4rem;
+      height: 4.06rem;
 
       &__icon {
         font-size: 2rem;

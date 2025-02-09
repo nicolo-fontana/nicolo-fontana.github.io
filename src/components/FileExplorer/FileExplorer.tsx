@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  FileExplorerFileType,
   FileExplorerFolderType,
   FileExplorerSectionType,
 } from "../../models/FileExplorerMenuModel";
@@ -7,7 +8,7 @@ import "./FileExplorer.scss";
 
 interface FileExplorerFolderInterface {
   folder: FileExplorerFolderType;
-  onFileClick: (FileExplorerFileId: any) => void;
+  onFileClick: (FileExplorerFileId: FileExplorerFileType) => void;
 }
 const FileExplorerFolder: React.FC<FileExplorerFolderInterface> = ({
   folder,
@@ -39,7 +40,7 @@ const FileExplorerFolder: React.FC<FileExplorerFolderInterface> = ({
         {folder.files?.map((file, id) => (
           <a
             className="file-explorer__folder__body__file d-flex text-decoration-none align-items-center"
-            onClick={() => onFileClick(file.id)}
+            onClick={() => onFileClick(file)}
             key={id}
           >
             <i className={`${file.icon} clr-file-explorer-icon`}></i>
@@ -55,7 +56,7 @@ const FileExplorerFolder: React.FC<FileExplorerFolderInterface> = ({
 
 interface FileExporerSectionInterface {
   section: FileExplorerSectionType;
-  onFileClick: (FileExplorerFileId: any) => void;
+  onFileClick: (FileExplorerFileId: FileExplorerFileType) => void;
 }
 const FileExportrSection: React.FC<FileExporerSectionInterface> = ({
   section,
@@ -80,7 +81,7 @@ const FileExportrSection: React.FC<FileExporerSectionInterface> = ({
       </a>
       <div
         className={`file-explorer__section__body ${
-          isOpened ? "file-explorer__section__body--opened pt-3 pb-4" : ""
+          isOpened ? "file-explorer__section__body--opened pt-4 pb-5" : ""
         }`}
       >
         {section.folders
@@ -111,7 +112,7 @@ const FileExportrSection: React.FC<FileExporerSectionInterface> = ({
 
 interface FileExplorerInterface {
   sections: FileExplorerSectionType[];
-  onFileClick: (FileExplorerFileId: any) => void;
+  onFileClick: (FileExplorerFileId: FileExplorerFileType) => void;
 }
 const FileExplorer: React.FC<FileExplorerInterface> = ({
   sections,

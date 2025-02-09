@@ -1,3 +1,5 @@
+import { FileId } from "./FileModel";
+
 export type FileExplorerSectionType = {
   name: string;
   folders?: FileExplorerFolderType[];
@@ -11,7 +13,7 @@ export type FileExplorerFolderType = {
 };
 
 export type FileExplorerFileType = {
-  id: FileExplorerFileId;
+  id: FileId;
   icon: string;
   name: string;
 };
@@ -21,8 +23,3 @@ export type FileExplorerLinkType = {
   name: string;
   url: string;
 };
-
-export enum FileExplorerFileId {
-  PERSONAL_INFO,
-  CONTACTS,
-}

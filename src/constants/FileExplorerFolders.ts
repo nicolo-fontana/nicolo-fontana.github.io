@@ -1,7 +1,5 @@
-import {
-  FileExplorerFileId,
-  FileExplorerSectionType,
-} from "../models/FileExplorerMenuModel";
+import { FileExplorerSectionType } from "../models/FileExplorerMenuModel";
+import { FileId } from "../models/FileModel";
 
 export const FILE_EXPLORER_SECTIONS: FileExplorerSectionType[] = [
   {
@@ -17,8 +15,13 @@ export const FILE_EXPLORER_SECTIONS: FileExplorerSectionType[] = [
         color: "#43D9AD",
         files: [
           {
-            id: FileExplorerFileId.PERSONAL_INFO,
+            id: FileId.PERSONAL_INFO,
             name: "high-school",
+            icon: "ri-markdown-fill",
+          },
+          {
+            id: FileId.CONTACTS,
+            name: "test",
             icon: "ri-markdown-fill",
           },
         ],
