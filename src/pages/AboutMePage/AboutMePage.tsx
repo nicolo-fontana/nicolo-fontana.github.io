@@ -12,15 +12,12 @@ const AboutMePage: React.FC<AboutMePageInterface> = () => {
 
   const openfile = (fileToOpen: FileExplorerFileType) => {
     if (openedFiles.findIndex((file) => file.id === fileToOpen.id) === -1)
-      setOpenedFiles([fileToOpen, ...openedFiles]);
+      setOpenedFiles([...openedFiles, fileToOpen]);
   };
 
   const closeFile = (fileToClose: FileExplorerFileType) => {
     if (openedFiles.length <= 1) return;
-    const fileIndex = openedFiles.findIndex(
-      (file) => file.id === fileToClose.id
-    );
-    setOpenedFiles(openedFiles.splice(fileIndex - 1, 1));
+    setOpenedFiles(openedFiles.filter((file) => file.id != fileToClose.id));
   };
 
   return (

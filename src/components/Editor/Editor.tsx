@@ -14,15 +14,14 @@ const EditorHeader: React.FC<EditorHeaderInterface> = ({
   return (
     <div className="editor__header d-flex">
       {openedFiles.map((openedFile, id) => (
-        <div
-          className="editor__header__file"
-          key={id}
-          onClick={() => onSelectClick(openedFile)}
-        >
-          <span className="theme-text-body-small m-0 clr-secondary-100 user-select-none">
+        <div className="editor__header__file" key={id}>
+          <span
+            className="theme-text-body-small m-0 clr-secondary-100 pe-5 user-select-none"
+            onClick={() => onSelectClick(openedFile)}
+          >
             {openedFile.name}
           </span>
-          <a className="ms-5" onClick={() => onCloseClick(openedFile)}>
+          <a onClick={() => onCloseClick(openedFile)}>
             <i className="ri-close-large-line editor__header__file__icon clr-secondary-100"></i>
           </a>
         </div>
